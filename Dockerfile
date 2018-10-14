@@ -15,6 +15,10 @@ ENV KAPACITOR_CONFIG_PATH /etc/kapacitor.conf
 VOLUME /shared
 VOLUME /var/lib/kapacitor
 
+COPY --from=0 /etc/ssl/certs/ca-certificates.crt /etc/ssl/certs/ca-certificates.crt
+COPY --from=0 /etc/localtime /etc/localtime
+COPY --from=0 /etc/timezone /etc/timezone
+
 COPY --from=0 /tmp/kapacitord /bin/kapacitord
 COPY --from=0 /tmp/kapacitor.conf /etc/kapacitor.conf
 ENTRYPOINT ["/bin/kapacitord"]
