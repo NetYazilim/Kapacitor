@@ -1,6 +1,6 @@
 FROM netyazilim/alpine-base:3.8
 
-ARG VERSION=1.5.1
+ARG VERSION=1.5.2
 
 WORKDIR /tmp
 RUN wget --no-cache --quiet https://dl.influxdata.com/kapacitor/releases/kapacitor-${VERSION}-static_linux_amd64.tar.gz -O kapacitor.tar.gz && \
